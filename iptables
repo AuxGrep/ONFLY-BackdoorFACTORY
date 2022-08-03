@@ -1,0 +1,29 @@
+#!/usr/bin/bash
+
+BOLD="\033[01;01m"     
+RED="\033[01;31m"      
+GREEN="\033[01;32m"    
+YELLOW="\033[01;33m"   
+RESET="\033[00m"
+UBlack='\033[4;30m'       # Black
+URed='\033[4;31m'         # Red
+UGreen='\033[4;32m'       # Green
+UYellow='\033[4;33m'      # Yellow
+UBlue='\033[4;34m'        # Blue
+UPurple='\033[4;35m'      # Purple
+UCyan='\033[4;36m'        # Cyan
+UWhite='\033[4;37m'       # White
+
+cover=https://cdn.discordapp.com/attachments/951192813477965856/1001540315813003264/moon.animation
+
+curl -s $cover|pv -q -L 9600
+echo -e $GREEN"FORWDING NETWORK REQUESTS TO PROXY SERVER"$RESET 
+echo ""
+iptables -t nat -A PREROUTING -p tcp --destination-port 80 -j REDIRECT --to-port 8080
+read -p "Press Enter to flush ur iptables or leave it to proceed with attack: " entr
+iptables -t nat --flush
+clear
+echo -e $RED"yOUR iptables return to normal condition"$RESET
+clear
+echo -e $YELLOW$BOLD"bYeeee!!!"$RESET
+
